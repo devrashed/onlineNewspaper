@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+
+<!--
+#######################################
+	- THE HEAD PART -
+######################################
+-->
+
+<!-- Mirrored from www.themepunch.com/codecanyon/showbiz/ by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 22 Aug 2014 18:56:42 GMT -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+
+	<title>SHOWBIZ - Carousel</title>
+	<link rel="icon" type="image/png" href="images/sitelogo.html" />
+
+
+
+    <!-- commented, remove this line to use IE & iOS favicons -->
+    <link rel="shortcut icon" href="images/favicon.html" />
+
+
+
+    <!-- get jQuery from the google apis -->
+    <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+
+
+    <!-- CSS STYLE -->
+    <link rel="stylesheet" type="text/css" href="sheet.css" media="screen" />
+
+
+     <!-- ANIMATE AND EASING LIBRARIES -->
+	<!--<script type="text/javascript" src="services-plugin/js/jquery.easing.1.3.js"></script>-->
+	<script type="text/javascript" src="jquery.cssAnimate.mini.js"></script>
+
+	<!-- TOUCH AND MOUSE WHEEL SETTINGS -->
+	<script type="text/javascript" src="jquery.touchwipe.min.js"></script>
+	<!--<script type="text/javascript" src="services-plugin/js/jquery.mousewheel.min.js"></script>-->
+
+	<!-- jQuery SERVICES Slider  -->
+	<script type="text/javascript" src="jquery.themepunch.services.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="settings.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+	<!--<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>-->
+</head>
+<body>
+<?php
+mysql_connect("localhost","root","");
+mysql_select_db("newspaper");
+?>
+
+
+                 <div id="services-example-1" class="theme1">
+                    <ul>
+					
+<?php
+    $query= "SELECT * FROM newstype Where category='national' order by nid DESC LIMIT 7";
+	$rsquery= mysql_query($query); 
+	while ($vquery2=mysql_fetch_array($rsquery))
+    {
+ ?>
+							<li style="margin-right:10px;">
+                            <div class="rokomary-var">
+								<img src="admin/<?php echo $vquery2 ['images'];?>" style="width:189px; height:134px;">
+								<!--<div style="margin-top:16px"></div>-->
+		<div class="roko-title"> <a href="count.php?title=<?php echo $vquery2['title']; ?>"><?php echo $vquery2 ['title'];?></a> </div><div class="clr"></div>
+        <div class="datetime"><em><?php echo $vquery2 ['bdate'];?>&nbsp;<?php echo $vquery2 ['btime'];?></em></div>
+								 <div class="roko-del"><?php echo substr($vquery2['description'], 0, 320); ?>....</div>
+								<!--<div class="home-detail"><a href="count.php?title=<?php echo $vquery2['title']; ?>"> বিস্তারিত </a></div>-->
+</div>
+							</li>
+
+
+<?php } ?>		
+                  </ul>
+
+						<div class="toolbar">
+							<div class="left"></div><div class="right"></div>
+						</div>
+					</div>
+
+			</div>
+
+ 
+
+
+			<!--
+			##############################
+			 - ACTIVATE THE BANNER HERE -
+			##############################
+			-->
+<!--			<script type="text/javascript">
+
+				$(document).ready(function() {
+					$.noConflict();
+
+					jQuery('#services-example-1').services(
+						{
+							width:1118,
+							height:390,
+							slideAmount:5,
+							slideSpacing:40,
+							touchenabled:"on",
+							mouseWheel:"on",
+							hoverAlpha:"off",
+							slideshow:1500,
+							hovereffect:"on",
+							callBack:function() { }
+
+						});
+
+				});
+			</script>-->
+
+
+
+
+	</body>
+</html>

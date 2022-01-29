@@ -1,0 +1,41 @@
+@media screen and (max-width: 480px) {
+.headertop_wrapper { display:none; }	
+.logo_bar { display:none; }	
+.navigation { display:none; }
+.latest-news { display:none; }
+.top-silde-left { display:none; }
+.top-silde-right { display:none; }
+#wrapper {display:none;}
+footer {display:none;}
+.footer-bottom  {display:none;}
+.innerright {display:none;}
+.mwrapper { display:block; }
+}
+
+@media screen and (max-width: 600px){
+.headertop_wrapper { display:none; }		
+.logo_bar { display:none; }		
+.navigation{ display:none; }
+.latest-news { display:none; }
+.top-silde-left { display:none; }
+.top-silde-right { display:none; }
+#wrapper { display:none; }
+footer { display:none; }
+.footer-bottom  {display:none;}
+.innerright {display:none;}
+.mwrapper { display:block; }
+}
+
+@media screen and (max-width: 999px){
+.headertop_wrapper { display:none; }	
+.logo_bar { display:none; }
+.navigation{ display:none; }
+.latest-news { display:none; }
+.top-silde-left { display:none; }
+.top-silde-right { display:none; }
+#wrapper { display:none; }
+footer { display:none; }
+.footer-bottom  {display:none;}
+.innerright {display:none;}
+.mwrapper { display:block; }
+}
